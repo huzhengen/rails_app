@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+更换 heroku stack
+
+```
+heroku stack:set heroku-18
+```
+
+```
+bundle _2.2.13_ configset--localwithout'production'
+```
