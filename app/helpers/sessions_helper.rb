@@ -4,6 +4,11 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
+  def log_out
+    reset_session
+    @current_user = nil
+  end
+
   # 返回当前登录的用户（如果有的话）
   def current_user
     if session[:user_id]
