@@ -23,12 +23,13 @@ Things you may want to cover:
 
 * ...
 
+```
 更换 heroku stack
-
-```
 heroku stack:set heroku-18
+heroku 创建数据库
+heroku rake db:migrate
 ```
 
 ```
-bundle _2.2.13_ configset--localwithout'production'
+bundle _2.2.13_ config set --local without 'production'
 ```
