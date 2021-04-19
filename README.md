@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README would normally document whatever steps are necessary to get the application up and running.
 
 Things you may want to cover:
 
@@ -32,4 +31,11 @@ heroku rake db:migrate
 
 ```
 bundle _2.2.13_ config set --local without 'production'
+```
+
+```
+heroku maintenance:on
+git push heroku
+heroku run rails db:migrate
+heroku maintenance:off
 ```
