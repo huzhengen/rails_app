@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # 创建一个主用户
-User.create!(name: "Example User",
-             email: "example@railstutorial.org",
+User.create!(name: "test",
+             email: "test@test.com",
              password: "123456",
-             password_confirmation: "123456")
+             password_confirmation: "123456",
+             admin: true)
 
 # 生成一些其他用户
 99.times do |n|

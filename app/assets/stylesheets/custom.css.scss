@@ -229,7 +229,7 @@ input {
   margin-left: 0;
 }
 
-/*Usersindex*/
+/*Users index*/
 .users {
   list-style: none;
   margin: 0;
@@ -238,12 +238,22 @@ input {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+    display: flex;
 
     & > span {
+      width: 200px;
       display: flex;
       flex-direction: column;
       height: 50px;
       justify-content: space-between;
+    }
+
+    & > a {
+      color: $gray-lighter;
+
+      &:hover {
+        color: #337ab7;
+      }
     }
   }
 }
