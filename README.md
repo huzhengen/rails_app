@@ -23,6 +23,12 @@ Things you may want to cover:
 * ...
 
 ```
+rails db:migrate
+rails db:migrate:reset
+rails db:seed
+```
+
+```
 更换 heroku stack
 heroku stack:set heroku-18
 heroku 创建数据库
