@@ -50,4 +50,10 @@ module SessionsHelper
       end
     end
   end
+
+  # 存储后面需要使用的地址
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
+
 end
