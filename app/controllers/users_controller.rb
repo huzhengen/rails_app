@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   attr_accessor :name, :email
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page])
   end
 
   def new
