@@ -11,7 +11,9 @@ User.create!(name: "test",
              email: "test@test.com",
              password: "123456",
              password_confirmation: "123456",
-             admin: true)
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
 
 # 生成一些其他用户
 99.times do |n|
@@ -21,5 +23,7 @@ User.create!(name: "test",
   User.create!(name: name,
                email: email,
                password: password,
-               password_confirmation: password)
+               password_confirmation: password,
+               activated: true,
+               activated_at: Time.zone.now)
 end
