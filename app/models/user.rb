@@ -29,9 +29,11 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, User.digest(remember_digest))
   end
 
-  def authenticated?(remember_token)
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  # 如果指定的令牌和摘要匹配，返回 true
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   def session_token
