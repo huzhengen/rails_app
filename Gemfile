@@ -73,7 +73,7 @@ end
 group :production do
   gem 'pg', '1.1.4'
   gem 'puma', '~> 3.11'
-  gem 'aws-sdk-s3', '1.87.0', require: false
+  # gem 'aws-sdk-s3', '1.87.0', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
