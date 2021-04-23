@@ -9,6 +9,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get root_path
     assert_select 'div.pagination'
+    assert_select 'input[type=file]'
     # 无效提交
     assert_no_difference 'Micropost.count' do
       post microposts_path, params: { micropost: { content: "" } }
@@ -18,8 +19,10 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     # 分页链接正确
     # 有效提交
     content = "This micropost really ties the room together"
+    image = fixture_file_upload('test/fixtures/kitten.jpg', 'image/jpeg')
     assert_difference 'Micropost.count', 1 do
-      post microposts_path, params: { micropost: { content: content } }
+      post microposts_path, params: { micropost: { content: content,
+                                                   image: image } }
     end
     assert_redirected_to root_url
     follow_redirect!
